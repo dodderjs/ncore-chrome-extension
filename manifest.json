@@ -1,0 +1,51 @@
+{
+  "name" : "DEV - nCore extension *beta*",
+  "version" : "1.0.0",
+  "manifest_version" : 2,
+  "description" : "",
+  "icons": {
+    "16" : "/img/icons/icon16.png",
+    "48" : "/img/icons/icon48.png",
+    "128" : "/img/icons/icon128.png"
+  },
+
+  "permissions" : [
+    "background",
+    "tabs",
+    "https://ncore.cc/*",
+    "http://www.feliratok.info/*"
+  ],
+
+   "browser_action": {
+    "default_icon": "/img/icons/icon48.png",
+    //"default_popup": "html/popup.html",
+    "default_title": "Click here!"
+  },
+
+  "background" : {
+    "persistent": false,
+    //"page" : "/html/background.html",
+    "scripts": ["/js/core/background.js"]
+  },
+
+  "content_scripts" : [{
+    "matches" : ["*://ncore.cc/*"],
+    "js" : ["/js/lib/lodash.js","/js/lib/zepto.1.1.6.min.js", "/js/lib/javascript-inheritance.js","/js/content_start.js"],
+    "run_at": "document_start"
+  },
+  {
+    "matches" : ["*://ncore.cc/torrents*"],
+    "css" : ["/css/content.css", "/css/ncore.css"],
+    "js" : ["/js/content.js"],
+    "run_at": "document_end"
+  }],
+
+  "web_accessible_resources": [
+    "/img/settings/icon.png",
+    "/img/settings/button.png",
+    "/img/settings/icons.png",
+    "/img/settings/remove.png",
+    "/img/icons/icon48.png",
+    "/img/content/download.png"
+  ]
+}
