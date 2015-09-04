@@ -1,6 +1,6 @@
 {
-  "name" : "DEV - nCore extension *beta*",
-  "version" : "1.0.0",
+  "name" : "DEV - nCore proxy extension *beta*",
+  "version" : "0.1.0",
   "manifest_version" : 2,
   "description" : "",
   "icons": {
@@ -12,12 +12,11 @@
   "permissions" : [
     "background",
     "tabs",
-    "https://ncore.cc/*",
-    "http://www.feliratok.info/*"
+    "https://ncore.cc/*"
   ],
 
    "browser_action": {
-    "default_icon": "/img/icons/icon48.png",
+    "default_icon": "/img/icons/icon-disabled-128.png",
     //"default_popup": "html/popup.html",
     "default_title": "Click here!"
   },
@@ -30,7 +29,7 @@
 
   "content_scripts" : [{
     "matches" : ["*://ncore.cc/*"],
-    "js" : ["/js/lib/lodash.js","/js/lib/zepto.1.1.6.min.js", "/js/lib/javascript-inheritance.js","/js/content_start.js"],
+    "js" : ["/js/lib/lodash.js","/js/lib/zepto.1.1.6.min.js", "/js/lib/javascript-inheritance.js","/js/autopager.js","/js/content_start.js"],
     "run_at": "document_start"
   },
   {

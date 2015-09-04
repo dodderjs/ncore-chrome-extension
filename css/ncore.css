@@ -1,12 +1,30 @@
+figure {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
 /*UJ*/
 html#WithExtension {
     font-family: Helvetica, Arial;
     font-weight: 100;
 }
 #container #main_all,
+#container .lista_all,
 #container .fobox_all,#container .fobox_all_alone {
     width: 100%;
 } 
+.lista_all:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
 .lista_all ul {
     list-style: none;
     padding: 0;
@@ -182,6 +200,16 @@ html#WithExtension {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0,0,0,.6);
+    background-color: rgba(0,0,0,.8);
     color: #ffffff;
+    font-size: 1.3em;
+}
+#MovieDetails figure {
+    float: left;
+}
+#MovieDetails .movie-info {
+    margin-left: 180px;
+}
+#MovieDetails .movieDetails {
+    padding: 40px;
 }
